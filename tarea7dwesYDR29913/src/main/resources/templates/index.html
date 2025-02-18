@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestión Vivero</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="css/index.css" th:href="@{/css/index.css}">
+  </head>
+  <body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img src="imagenes/Logo.png" alt="Logo" width="80">
+        </div>
+        
+        <div id="navegacion-titulo">
+            <p>Gestión del Vivero</p>
+        </div>
+
+        <ul id="navegacion-login">
+            <li><a href="/mostrarLogin"><img src="imagenes/login.jpg" alt="Login" width="65"></a></li>
+        </ul>
+    </div>
+
+    <div class="contenido">
+        <div id="contenido-titulo">
+            <p>Bienvenido al Vivero</p>
+        </div>
+
+        <div id="contenido-imagen">
+            <img src="imagenes/vivero-2.jpg" alt="Vivero" width="720">
+        </div>
+
+
+        <div class="flip3D">
+            <div class="front">
+                <div class="contenido-flip3D">
+                    <h2>Login</h2>
+                    <p>Inicia sesión en la página para tener acceso a múltiples opciones de la gestión del vivero</p>
+                </div>
+            </div>
+
+            <div class="back">
+                <div class="contenido-flip3D">
+                    <a href="/mostrarLogin"><button type="button" name="login">Log In</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip3D">
+            <div class="front">
+                <div class="contenido-flip3D">
+                    <h2>Ver Plantas</h2>
+                    <p>Este menu te permite visualizar todas las plantas que hay registradas en la base de datos del vivero</p>
+                </div>
+            </div>
+
+            <div class="back">
+                <div class="contenido-flip3D">
+                    <a href="/mostrarVerPlantas"><button type="button" name="ver-plantas">Ver Plantas</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #f8f7f7;*/
+    background-image: url(../imagenes/fondo-hojas-4.PNG);
+    margin: 0px;
+}
+
+
+/*Header*/
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    
+    background-image: url(../imagenes/banner-patron-hojas.avif);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+    width: 100%;
+}
+
+#navegacion-titulo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#navegacion-login li {
+    display: block;
+}
+
+
+/*Main*/
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-block: 80px;
+    padding: 80px;
+    width: 750px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    border: 1px solid;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.6);
+}
+
+#contenido-titulo {
+    font-size: 45px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: green;
+}
+
+#contenido-imagen {
+    margin-bottom: 58px;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
+}
+
+.contenido-flip3D {
+    width: 99%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #407c39;
+    border-radius: 18px;
+    border: 1px solid;
+}
+
+.contenido-flip3D button {
+    padding: 10px 40px;
+    margin-top: 10px;
+    border: none;
+    background-color: #19451a;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contenido-flip3D button:hover {
+    background-color: #132e15;
+}
+
+.contenido-flip3D p {
+    margin-inline: 20px;
+}
+
+
+/*Efecto Flip*/
+.flip3D {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    margin: 20px auto;
+    perspective: 1000px;
+	border-radius: 25px;
+	
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
+}
+
+.flip3D > .front, .flip3D > .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.flip3D > .front {
+    transform: rotateY(0deg);
+}
+
+.flip3D > .back {
+    transform: rotateY(180deg);
+}
+
+.flip3D:hover > .front {
+    transform: rotateY(-180deg);
+}
+
+.flip3D:hover > .back {
+    transform: rotateY(0deg);
+}
