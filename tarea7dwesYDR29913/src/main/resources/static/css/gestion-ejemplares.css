@@ -1,0 +1,259 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #f8f7f7;*/
+    background-image: url(../imagenes/fondo-hojas-4.PNG);
+    margin: 0px;
+}
+
+
+/*Header*/
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    
+    background-image: url(../imagenes/banner-patron-hojas.avif);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+    width: 100%;
+}
+
+#navegacion-titulo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#navegacion-volver li {
+    display: block;
+}
+
+
+/*Main*/
+#opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-block: 20px;
+    padding: 80px;
+    width: 750px;
+    border-radius: 30px;
+}
+
+
+#contenido-titulo {
+    font-size: 28px;
+}
+
+#contenido-texto {
+    margin-bottom: 80px;
+}
+
+#contenido h3 {
+    font-size: 25px;
+    color: #333;
+}
+
+#contenido-plantas {
+    width: 700px;
+    height: 350px;
+    border-radius: 30px;
+    background-color: #f8f7f7;
+
+    border: 1px solid;
+}
+
+
+/*Registrar Ejemplar*/
+#registrar-ejemplar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #f8f7f7;
+    padding: 15px;
+    padding-inline: 30px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    width: 650px;
+    height: 420px;
+    border: 1px solid;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
+}
+
+#registrar-ejemplar h2 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 95%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+select {
+    width: 97%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+button {
+    width: 49%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: green;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: red;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+
+/*Filtar Ejemplares*/
+#filtrar-ejemplares {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f8f7f7;
+    padding: 15px;
+    padding-inline: 30px;
+    border-radius: 30px;
+    margin-bottom: 80px;
+    width: 650px;
+    height: 500px;
+    border: 1px solid;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
+}
+
+#filtrar-ejemplares h2 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+#filtrar-ejemplares label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#filtrar-ejemplares select {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+#filtrar-ejemplares button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#filtrar-ejemplares button[type="submit"] {
+    background-color: green;
+    color: white;
+}
+
+#filtrar-ejemplares button:hover {
+    opacity: 0.7;
+}
+
+#resultado {
+    align-self: center;
+
+    width: 600px;
+    height: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 1px solid grey;
+}
+
+
+/*Mensajes de Seguimiento*/
+#mensaje-seguimiento {
+    width: 700px;
+    height: 350px;
+    border-radius: 30px;
+    background-color: #f8f7f7;
+
+    border: 1px solid;
+}
+
+
+/* Menu Mensajes Seguimiento */
+#menu-gestion-ejemplares, #menu-mensajes-seguimiento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 720px;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #f8f7f7;
+    
+    border: 1px solid;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
+}
+
+#menu-gestion-ejemplares {
+    margin-bottom: 50px;
+}
+
+#menu-gestion-ejemplares, #menu-mensajes-seguimiento {
+    text-decoration: none;
+    color: #333;
+}
+
+#menu-gestion-ejemplares p, #menu-mensajes-seguimiento p {
+    margin-inline: 50px;
+    margin-top: 10px;
+    color: black;
+}

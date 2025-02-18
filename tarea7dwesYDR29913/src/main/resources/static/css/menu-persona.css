@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #f8f7f7;*/
+    background-image: url(../imagenes/fondo-hojas-4.PNG);
+    margin: 0px;
+}
+
+
+/*Header*/
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    
+    background-image: url(../imagenes/banner-patron-hojas.avif);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+    width: 100%;
+}
+
+#navegacion-titulo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#navegacion-volver li {
+    display: block;
+}
+
+
+/*Registrar Persona*/
+#opciones {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: #f8f7f7;
+	padding: 15px;
+	padding-inline: 30px;
+	border-radius: 30px;
+	margin-block: 100px;
+	width: 650px;
+	height: 500px;
+	border: 1px solid;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
+}
+
+#opciones h2 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 95%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+button {
+    width: 49%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: green;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: red;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.7;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu Persona</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="../css/menu-persona.css" >
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img src="../imagenes/Logo.png" alt="Logo" width="90">
+        </div>
+        
+        <div id="navegacion-titulo">
+            <p>Menu Personas</p>
+        </div>
+
+        <ul id="navegacion-volver">
+            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="">
+		<form id="opciones" th:action="@{/registrarPersona}" method="post">
+			<h2>Registrar Persona</h2>
+				
+			<label for="nombre">Nombre:</label> 
+			<input type="text" name="nombre" id="nombre" required>
+				
+			<label for="correo">Correo:</label>
+			<input type="email" name="correo" id="correo" placeholder="ejemplo@gmail.com" required>
+				
+			<label for="usuario">Usuario:</label>
+			<input type="text" name="usuario" id="usuario" required>
+				
+			<label for="contraseña">Contraseña:</label>
+			<input type="password" name="contraseña" id="contraseña" required>
+
+			<div id="form-botones">
+				<button type="submit">Registrar</button>
+				<button type="reset" id="reiniciar">Borrar</button>
+			</div>
+		</form>
+
+		<!-- Mostrar mensajes de error o éxito -->
+		<div th:if="${errorEmail != null}">
+			<p th:text="${errorEmail}" style="color: red;"></p>
+		</div>
+		<div th:if="${errorUsuario != null}">
+			<p th:text="${errorUsuario}" style="color: red;"></p>
+		</div>
+		<div th:if="${errorPassword != null}">
+			<p th:text="${errorPassword}" style="color: red;"></p>
+		</div>
+		<div th:if="${mensajeExito != null}">
+			<p th:text="${mensajeExito}" style="color: green;"></p>
+		</div>
+	</div>
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

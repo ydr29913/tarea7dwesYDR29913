@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="../css/login.css">
+  </head>
+  <body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img src="../imagenes/Logo.png" alt="Logo" width="75">
+        </div>
+        <div id="navegacion-titulo">
+            <p>Login</p>
+        </div>
+        <ul id="navegacion-volver">
+            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="opciones">
+        <form id="formulario" action="/login" method="POST">
+            <h2>LOGIN</h2>
+
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario" id="usuario" required>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" name="contraseña" id="contraseña" required>
+
+            <div id="form-botones">
+                <button type="submit">Iniciar Sesion</button>
+                <button type="reset" id="reiniciar">Borrar</button>
+            </div>
+        </form>
+        
+        <!-- Mostrar error en caso de que haya uno -->
+        <div th:if="${error != null}" class="alert alert-danger">
+            <span th:text="${error}">Usuario o contraseña incorrectos.</span>
+        </div>
+    </div>
+    
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

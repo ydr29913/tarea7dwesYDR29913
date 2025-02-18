@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ver Plantas</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="css/ver-plantas.css" th:href="@{/css/ver-plantas.css}">
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img th:src="@{/imagenes/Logo.png}" alt="Logo" width="90">
+        </div>
+        <div id="navegacion-titulo">
+            <p>Ver Plantas</p>
+        </div>
+        <ul id="navegacion-volver">
+            <li><a th:href="@{/mostrarIndex}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="">
+        <div id="contenido-plantas">
+        	<h2>VER PLANTAS</h2>
+        
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Nombre Común</th>
+                        <th>Nombre Científico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="planta : ${plantas}">
+                        <td th:text="${planta.id}"></td>
+                        <td th:text="${planta.codigo}"></td>
+                        <td th:text="${planta.nombreComun}"></td>
+                        <td th:text="${planta.nombreCientifico}"></td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(plantas)}">
+                        <td colspan="4" class="text-center">No hay plantas registradas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

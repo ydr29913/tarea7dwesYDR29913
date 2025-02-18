@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu Admin</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="../css/menu-admin.css" >
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img src="../imagenes/Logo.png" alt="Logo" width="90">
+        </div>
+        
+        <div id="navegacion-titulo">
+            <p>Menu Administrador</p>
+        </div>
+
+        <ul id="navegacion-volver">
+            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="opciones">
+        <a href="/mostrarVerPlantas" id="menu-gestion-ejemplares">
+            <h2>Ver Plantas</h2>
+            <p>Esta opcion te permite ver las plantas del vivero</p>
+        </a>
+
+		<div id="menu-persona">
+    		<a href="/mostrarMenuPersona" id="menu-gestion-ejemplares">
+            	<h2>Menu Personas</h2>
+            	<p>Esta opcion te permite registrar una persona en el vivero</p>
+        	</a>
+    	</div>
+    	
+    	<div id="menu-planta">
+    		<a href="/mostrarMenuPlanta" id="menu-gestion-ejemplares">
+            	<h2>Menu Plantas</h2>
+            	<p>Esta opcion te permite añadir o modificar una planta del vivero</p>
+        	</a>
+    	</div>
+
+		<a href="/mostrarGestionEjemplares" id="menu-gestion-ejemplares">
+            <h2>Menu Gestion Ejemplares</h2>
+            <p>Esta opcion te permithe acceder al menu del admin del vivero</p>
+        </a>
+
+              
+        <a href="/mostrarGestionMensajes" id="menu-gestion-mensajes">
+            <h2>Menu Gestion Mensajes</h2>
+            <p>Esta opcion te permithe acceder al menu del personal del vivero</p>
+        </a>
+    </div>
+    
+    
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

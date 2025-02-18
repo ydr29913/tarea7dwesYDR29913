@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../imagenes/fondo-hojas-4.PNG);
+    margin: 0px;
+}
+
+
+/*Header*/
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    
+    background-image: url(../imagenes/banner-patron-hojas.avif);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+    width: 100%;
+}
+
+#navegacion-titulo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#navegacion-volver li {
+    display: block;
+}
+
+
+/*Main*/
+#contenido-plantas {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	
+	width: 700px;
+    height: auto;
+    border-radius: 30px;
+    background-color: #f8f7f7;
+    border: 1px solid #d1d1d1;
+    padding: 20px;
+	margin-block: 80px;
+    overflow-x: auto;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.6);
+}
+
+#contenido-titulo {
+    font-size: 28px;
+}
+
+#contenido-texto {
+    margin-bottom: 80px;
+}
+
+/* Estilos de la tabla */
+#contenido-plantas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#contenido-plantas th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#contenido-plantas th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+#contenido-plantas td {
+    background-color: #ffffff;
+}
+
+#contenido-plantas tr:hover {
+    background-color: #f1f1f1;
+}
+
+#contenido-plantas td, th {
+    border-radius: 8px;
+}
+
+/* Añadir estilo cuando no hay plantas registradas */
+#contenido-plantas table .text-center {
+    color: #f44336;
+    font-size: 18px;
+    font-weight: bold;
+}

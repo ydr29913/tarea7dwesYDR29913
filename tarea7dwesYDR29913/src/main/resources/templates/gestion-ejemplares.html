@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestión Ejemplares</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="../css/gestion-ejemplares.css">
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img src="../imagenes/Logo.png" alt="Logo" width="90">
+        </div>
+        
+        <div id="navegacion-titulo">
+            <p>Gestion Ejemplares</p>
+        </div>
+
+        <ul id="navegacion-volver">
+            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+        </ul>
+    </div>
+
+	
+    <div id="opciones">
+   		<form id="registrar-ejemplar" action="/insertarEjemplar" th:action="@{/insertarEjemplar}" method="post">
+		   	<h2>Registrar Ejemplar</h2>
+			
+			<label for="planta">Selecciona una Planta:</label>
+		   	<select name="id" id="planta" required>
+		   		<option value="" disabled selected>Seleccione una planta</option>
+		       	<option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.nombreComun}"></option>
+		   	</select>
+		  	
+			<label for="nombre">Nombre Ejemplar:</label>
+		   	<input type="text" name="nombre" id="nombre" required>
+		            
+			<label for="mensaje">Introduce un Mensaje:</label>
+		   	<input type="text" name="mensaje" id="mensaje" required>
+		            
+			<div id="form-botones">
+				<button type="submit">Registrar</button>
+				<button type="reset" id="reiniciar">Borrar</button>
+			</div>
+		</form>
+        
+		<form id="filtrar-ejemplares" action="/filtrarEjemplares" th:action="@{/filtrarEjemplares}" method="post">
+			<h2>Filtrar Ejemplares</h2>
+			
+            <label for="plantaFiltro">Selecciona una Planta para filtrar los Ejemplares:</label>
+            <select name="id" id="plantaFiltro" required>
+                <option value="" disabled selected>Seleccione una planta</option>
+                <option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.nombreComun}"></option>
+            </select>
+			
+			<div id="form-botones">
+				<button type="submit">Filtrar Ejemplares</button>
+			</div>
+			
+			<div id="resultado">
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Planta Asociada</th>
+							<th>Mensaje</th>
+						</tr>
+					</thead>
+<!-- 					<tbody> -->
+<!-- 				      	<tr th:each="ejemplar : ${ejemplares}"> -->
+<!-- 				          	<td th:text="${ejemplar.nombre}"></td> -->
+<!-- 				        	<td th:text="${ejemplar.planta.nombreComun}"></td> -->
+<!-- 				          	<td th:text="${ejemplar.mensaje}"></td> -->
+<!-- 				       	</tr> -->
+<!-- 				       	<tr th:if="${#lists.isEmpty(ejemplares)}"> -->
+<!-- 				        	<td colspan="3">No hay ejemplares registrados</td> -->
+<!-- 				       	</tr> -->
+<!-- 				  	</tbody> -->
+				</table>
+			</div>
+        </form>
+
+		<div id="">
+    		<a href="/mostrarMenuMensajesSeguimiento" id="menu-mensajes-seguimiento">
+            	<h2>Menu Mensajes Seguimiento</h2>
+            	<p>Esta opcion te permite ver los mensajes de seguimiento</p>
+        	</a>
+    	</div>
+    </div>
+    
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #f8f7f7;*/
+    background-image: url(../imagenes/fondo-hojas-4.PNG);
+    margin: 0px;
+}
+
+
+/*Header*/
+#navegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    
+    background-image: url(../imagenes/banner-patron-hojas.avif);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+    width: 100%;
+}
+
+#navegacion-titulo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#navegacion-volver li {
+    display: block;
+}
+
+
+/*Main*/
+#opciones {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	
+    width: 700px;
+    height: auto;
+    padding: 20px;
+    margin-block: 80px;
+    overflow-x: auto;
+    border-radius: 30px;
+    background-color: #f8f7f7;
+    
+    border: 1px solid black;
+	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.6);
+	
+}
+
+
+/* Estilos de la tabla */
+#opciones table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#opciones th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#opciones th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+#opciones td {
+    background-color: #ffffff;
+}
+
+#opciones tr:hover {
+    background-color: #f1f1f1;
+}
+
+#opciones td, th {
+    border-radius: 8px;
+}
+
+/* Añadir estilo cuando no hay plantas registradas */
+#opciones table .text-center {
+    color: #f44336;
+    font-size: 18px;
+    font-weight: bold;
+}
