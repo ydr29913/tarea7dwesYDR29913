@@ -86,7 +86,7 @@ body {
     margin-top: 20px;
     margin-bottom: 80px;
     width: 650px;
-    height: 420px;
+    height: 280px;
     border: 1px solid;
 	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
 }
@@ -157,7 +157,7 @@ button:hover {
     border-radius: 30px;
     margin-bottom: 80px;
     width: 650px;
-    height: 500px;
+    height: auto;
     border: 1px solid;
 	box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.5);
 }

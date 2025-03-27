@@ -41,4 +41,8 @@ public class ServiciosPlanta {
         Optional<Planta> planta = plantarepo.findById(id);
         return planta.orElse(null);
     }
+	
+	public boolean validarCodigo(String codigo) {
+	    return codigo != null && !codigo.contains(" ") && !codigo.trim().isEmpty();
+	}
 }

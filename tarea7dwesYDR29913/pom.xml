@@ -12,7 +12,7 @@
 	<artifactId>tarea7dwesYDR29913</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tarea7dwesYDR29913</name>
-	<description>Realizacion de la tarea 7 (Dani Gayol)</description>
+	<description>Realizacion de la Tarea 7 (Dani Gayol)</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -35,23 +35,18 @@
 <!--			<groupId>org.springframework.boot</groupId>-->
 <!--			<artifactId>spring-boot-starter-security</artifactId>-->
 <!--		</dependency>-->
+
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.session</groupId>-->
 <!--			<artifactId>spring-session-core</artifactId>-->
 <!--		</dependency>-->
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.security</groupId>-->
 <!--			<artifactId>spring-security-test</artifactId>-->
 <!--			<scope>test</scope>-->
 <!--		</dependency>-->
-		
-<!--	Dependencias	-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -73,6 +68,11 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>

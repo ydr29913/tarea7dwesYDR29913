@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Mensajes</title>
+    <link rel="stylesheet" href="../css/menu-filtrar-mensajes.css">
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
+        </div>
+        
+        <div id="navegacion-titulo">
+            <p>Filtrar Mensajes</p>
+        </div>
+
+        <ul id="navegacion-volver">
+            <li><a href="/mostrarGestionMensajes"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+        </ul>
+    </div>
+
+
+    <div id="">
+		<a href="/mostrarVerFiltrarPersona" id="menu-mensajes-seguimiento">
+            <h2>Filtrar Mensajes Por Persona</h2>
+            <p>Esta opcion te permite filtrar los mensajes por personas</p>
+        </a>
+		
+		<a href="/mostrarVerFiltrarFecha" id="menu-mensajes-seguimiento">
+            <h2>Filtrar Mensajes Por Fechas</h2>
+            <p>Esta opcion te permite filtrar los mensajes por rango de fechas</p>
+        </a>
+		
+		<a href="/mostrarVerFiltrarPlanta" id="menu-mensajes-seguimiento">
+            <h2>Filtrar Mensajes Por Planta</h2>
+            <p>Esta opcion te permite filtrar los mensajes por tipo de planta</p>
+        </a>
+	</div>
+    
+    
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

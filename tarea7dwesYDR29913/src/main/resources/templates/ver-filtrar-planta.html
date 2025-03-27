@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ver Mensajes Seguimiento</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" th:href="@{/css/ver-filtrar-planta.css}">
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
+        </div>
+        <div id="navegacion-titulo">
+            <p>Ver Mensajes Seguimiento</p>
+        </div>
+        <ul id="navegacion-volver">
+            <li><a th:href="@{/mostrarMenuFiltrarMensajes}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="">        
+<!--        <form id="filtrar-mensajes" action="/filtrarMensajesPorPlanta" method="post">-->
+<!--            <h2>Filtrar Mensajes Por Planta</h2>-->
+
+<!--            <label for="filtroPlanta">Selecciona una Planta para filtrar los Mensajes:</label>-->
+<!--            <select name="filtroPlanta" id="filtroEjemplar">-->
+<!--                <option value="">Seleccione una planta</option>-->
+<!--                <option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.codigo}"></option>-->
+<!--            </select>-->
+
+<!--            <div id="form-botones">-->
+<!--                <button type="submit">Filtrar Mensajes</button>-->
+<!--            </div>-->
+
+<!--			<div id="resultado">-->
+<!--				<ul id="mensajes-lista">-->
+<!--					<th:block th:each="mensaje : ${mensajes}">-->
+<!--						<li th:text="${mensaje.mensaje}"></li>-->
+<!--					</th:block>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</form>-->
+		<form id="filtrar-mensajes" action="/filtrarMensajesPorPlanta" method="post">
+		    <h2>Filtrar Mensajes Por Planta</h2>
+		
+		    <label for="filtroPlanta">Selecciona una Planta para filtrar los Mensajes:</label>
+		    <select name="filtroPlanta" id="filtroPlanta">
+		        <option value="">Seleccione una planta</option>
+		        <option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.codigo}"></option>
+		    </select>
+		
+		    <div id="form-botones">
+		        <button type="submit">Filtrar Mensajes</button>
+		    </div>
+		
+		    <div id="resultado">
+		        <table class="table table-striped">
+		            <thead>
+		                <tr>
+		                    <th>Usuario</th>
+		                    <th>Fecha</th>
+		                    <th>Mensaje</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr th:each="mensaje : ${mensajes}">
+		                    <td th:text="${mensaje.persona.getNombre()}"></td>
+		                    <td th:text="${mensaje.fechaHora}"></td>
+		                    <td th:text="${mensaje.mensaje}"></td>    
+		                </tr>
+		                <tr th:if="${#lists.isEmpty(mensajes)}">
+		                    <td colspan="3" class="text-center">No hay mensajes disponibles</td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		</form>
+    </div>
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

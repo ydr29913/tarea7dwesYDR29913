@@ -38,11 +38,9 @@ public class Planta implements Serializable {
 	private List<Ejemplar> ejemplares = new LinkedList<Ejemplar>();
 	
 	
-	//Constructor
 	public Planta() {}
 
 
-	//Getters y Setters
 	public Long getId() {
 		return id;
 	}

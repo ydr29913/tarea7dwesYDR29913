@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ydr29913.tarea7dwesYDR29913.modelo.Ejemplar;
+import com.ydr29913.tarea7dwesYDR29913.modelo.Planta;
 import com.ydr29913.tarea7dwesYDR29913.repositorios.EjemplarRepository;
 
 @Service
@@ -32,4 +33,11 @@ public class ServiciosEjemplar {
         Optional<Ejemplar> ejemplar = ejemplarrepo.findById(id);
         return ejemplar.orElse(null);
     }
+	
+	public Long ultimoIdEjemplarByPlanta(Planta planta) {
+		if (planta != null)
+			return ejemplarrepo.ultimoIdEjemplarByPlanta(planta);
+		else
+			return null;
+	}
 }

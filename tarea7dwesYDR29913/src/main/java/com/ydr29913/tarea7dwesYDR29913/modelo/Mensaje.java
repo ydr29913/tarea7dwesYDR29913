@@ -28,7 +28,7 @@ public class Mensaje implements Serializable {
 	private String mensaje;
 	
 	@Column
-	@Temporal(TemporalType.TIME)
+	@Temporal(TemporalType.DATE)
 	private Date fechaHora;
 	
 	@ManyToOne
@@ -38,6 +38,10 @@ public class Mensaje implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="idPersona")
 	private Persona persona;
+	
+	@ManyToOne
+	@JoinColumn(name="idPlanta")
+	private Planta planta;
 	
 	
 	//Constructor
@@ -87,5 +91,13 @@ public class Mensaje implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}	
+	}
+
+	public Planta getPlanta() {
+		return planta;
+	}
+
+	public void setPlanta(Planta planta) {
+		this.planta = planta;
+	}
 }

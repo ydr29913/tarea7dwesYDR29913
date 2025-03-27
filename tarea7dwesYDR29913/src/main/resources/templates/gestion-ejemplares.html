@@ -11,7 +11,7 @@
 <body>
     <div id="navegacion">
         <div id="navegacion-logo">
-            <img src="../imagenes/Logo.png" alt="Logo" width="90">
+            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
         </div>
         
         <div id="navegacion-titulo">
@@ -31,56 +31,59 @@
 			<label for="planta">Selecciona una Planta:</label>
 		   	<select name="id" id="planta" required>
 		   		<option value="" disabled selected>Seleccione una planta</option>
-		       	<option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.nombreComun}"></option>
+		       	<option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.codigo}"></option>
 		   	</select>
-		  	
-			<label for="nombre">Nombre Ejemplar:</label>
-		   	<input type="text" name="nombre" id="nombre" required>
-		            
-			<label for="mensaje">Introduce un Mensaje:</label>
-		   	<input type="text" name="mensaje" id="mensaje" required>
 		            
 			<div id="form-botones">
 				<button type="submit">Registrar</button>
 				<button type="reset" id="reiniciar">Borrar</button>
 			</div>
 		</form>
-        
-		<form id="filtrar-ejemplares" action="/filtrarEjemplares" th:action="@{/filtrarEjemplares}" method="post">
-			<h2>Filtrar Ejemplares</h2>
-			
-            <label for="plantaFiltro">Selecciona una Planta para filtrar los Ejemplares:</label>
-            <select name="id" id="plantaFiltro" required>
-                <option value="" disabled selected>Seleccione una planta</option>
-                <option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.nombreComun}"></option>
+
+
+		<form id="filtrar-ejemplares" action="/filtrarEjemplares" method="post">
+            <h2>Filtrar Ejemplares</h2>
+
+            <label for="plantaFiltro">Selecciona un Ejemplar para filtrar los Mensajes:</label>
+            <select name="id" id="plantaFiltro">
+                <option value="">Seleccione una Planta</option>
+                <option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.codigo}"></option>
             </select>
-			
-			<div id="form-botones">
-				<button type="submit">Filtrar Ejemplares</button>
-			</div>
-			
+
+            <div id="form-botones">
+                <button type="submit">Filtrar Ejemplares</button>
+            </div>
+
 			<div id="resultado">
-				<table>
-					<thead>
-						<tr>
-							<th>Nombre</th>
-							<th>Planta Asociada</th>
-							<th>Mensaje</th>
-						</tr>
-					</thead>
-<!-- 					<tbody> -->
-<!-- 				      	<tr th:each="ejemplar : ${ejemplares}"> -->
-<!-- 				          	<td th:text="${ejemplar.nombre}"></td> -->
-<!-- 				        	<td th:text="${ejemplar.planta.nombreComun}"></td> -->
-<!-- 				          	<td th:text="${ejemplar.mensaje}"></td> -->
-<!-- 				       	</tr> -->
-<!-- 				       	<tr th:if="${#lists.isEmpty(ejemplares)}"> -->
-<!-- 				        	<td colspan="3">No hay ejemplares registrados</td> -->
-<!-- 				       	</tr> -->
-<!-- 				  	</tbody> -->
-				</table>
+				<ul id="mensajes-lista">
+					<th:block th:each="ejemplar : ${ejemplares}">
+						<li th:text="${ejemplar.nombre}"></li>
+					</th:block>
+				</ul>
 			</div>
-        </form>
+		</form>
+
+<!-- 		<form id="filtrar-ejemplares" action="/filtrarEjemplares" method="post"> -->
+<!--     		<h2>Filtrar Ejemplares</h2> -->
+
+<!--     		<label for="plantaFiltro">Selecciona una o varias Plantas:</label> -->
+<!--     		<select name="id[]" id="plantaFiltro" multiple required> -->
+<!--         		<option th:each="planta : ${plantas}" th:value="${planta.id}" th:text="${planta.codigo}"></option> -->
+<!--     		</select> -->
+
+<!--     		<div id="form-botones"> -->
+<!--         		<button type="submit">Filtrar Ejemplares</button> -->
+<!--     		</div> -->
+
+<!--     		<div id="resultado"> -->
+<!--         		<ul id="mensajes-lista"> -->
+<!--             		<th:block th:each="ejemplar : ${ejemplares}"> -->
+<!--                 		<li th:text="${ejemplar.nombre}"></li> -->
+<!--             		</th:block> -->
+<!--         		</ul> -->
+<!--     		</div> -->
+<!-- 		</form> -->
+
 
 		<div id="">
     		<a href="/mostrarMenuMensajesSeguimiento" id="menu-mensajes-seguimiento">

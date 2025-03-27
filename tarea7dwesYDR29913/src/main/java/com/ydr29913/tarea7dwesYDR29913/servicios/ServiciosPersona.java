@@ -1,5 +1,7 @@
 package com.ydr29913.tarea7dwesYDR29913.servicios;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +20,15 @@ public class ServiciosPersona {
 	
 	public void insertarPersona(Persona persona) {
 		personarepo.saveAndFlush(persona);
+	}
+	
+	public List<Persona> obtenerTodasPersonas() {
+		return personarepo.findAll();
+	}
+	
+	public Persona obtenerPersonaPorId(Long id) {
+		Optional<Persona> persona = personarepo.findById(id);
+		return persona.orElse(null);
 	}
 	
 	//Sirve para validar que el nombre esta introducido correctamente

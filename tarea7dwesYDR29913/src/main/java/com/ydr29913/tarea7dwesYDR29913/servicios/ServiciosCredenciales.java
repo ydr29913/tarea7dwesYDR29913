@@ -1,5 +1,7 @@
 package com.ydr29913.tarea7dwesYDR29913.servicios;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +46,9 @@ public class ServiciosCredenciales {
 	        return false;
 	    }
 	    return credencialesrepo.findByUsuario(password) == null;
+	}
+	
+	public List<Credenciales> obtenerCredencialesPorIdPersona (Long idPersona) {
+		return credencialesrepo.findByPersonaId(idPersona);
 	}
 }

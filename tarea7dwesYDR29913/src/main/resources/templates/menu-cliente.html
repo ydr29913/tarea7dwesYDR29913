@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menú Cliente</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="../css/menu-cliente.css">
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img src="../imagenes/Logo.png" alt="Logo" width="90">
+        </div>
+        
+        <div id="navegacion-titulo">
+            <p>Menú Cliente</p>
+        </div>
+
+        <ul id="navegacion-volver">
+            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Volver" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="contenido">
+        <a href="/mostrarRealizarPedido" id="menu-gestion-ejemplares">
+            <h2>Realizar Pedido</h2>
+            <p>Esta opcion te permite realizar un pedido</p>
+        </a>
+
+		<a href="/confirmarPedido" id="menu-gestion-ejemplares">
+			<h2>Ver Carrito</h2>
+			<p>Accede al menú de la gestión del stock.</p>
+		</a>
+		
+        <a href="/confirmarPedido" id="menu-gestion-ejemplares">
+            <h2>Gestión de Stock</h2>
+            <p>Accede al menú de la gestión del stock.</p>
+        </a>
+    </div>
+    
+    
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

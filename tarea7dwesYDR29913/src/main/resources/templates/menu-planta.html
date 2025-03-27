@@ -11,7 +11,7 @@
 <body>
     <div id="navegacion">
         <div id="navegacion-logo">
-            <img src="../imagenes/Logo.png" alt="Logo" width="90">
+            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
         </div>
         
         <div id="navegacion-titulo">
@@ -19,7 +19,7 @@
         </div>
 
         <ul id="navegacion-volver">
-            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+            <li><a href="/mostrarMenuAdmin"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
         </ul>
     </div>
 
@@ -57,9 +57,12 @@
 			<form id="opciones" action="/modificarPlanta" th:action="@{/modificarPlanta}" method="post">
 				<h2>Modificar Planta</h2>
 			
-				<label for="codigo">Código de la Planta:</label>
-				<input type="text" name="codigo" id="codigo" required>
-				
+				<label for="codigo">Selecciona una Planta:</label>
+				<select name="codigo" id="filtroEjemplar">
+    				<option value="">Seleccione una planta</option>
+    				<option th:each="planta : ${plantas}" th:value="${planta.codigo}" th:text="${planta.codigo}"></option>
+				</select>
+							
 				<label for="nuevoNombreComun">Nuevo Nombre Común:</label>
 				<input type="text" name="nuevoNombreComun" id="nuevoNombreComun">
 

@@ -26,11 +26,9 @@ public class Persona implements Serializable{
 	private String email;
 	
 	
-	//Constructor
 	public Persona() {}
 
 	
-	//Getters y Setters
 	public Long getId() {
 		return id;
 	}

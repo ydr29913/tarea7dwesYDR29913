@@ -1,0 +1,228 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="es" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>Realizar Pedido</title>-->
+<!--     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+<!--    <link rel="stylesheet" href="css/realizar-pedido.css" th:href="@{/css/realizar-pedido.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div id="navegacion">-->
+<!--        <div id="navegacion-logo">-->
+<!--            <img th:src="@{/imagenes/Logo.png}" alt="Logo" width="90">-->
+<!--        </div>-->
+<!--        <div id="navegacion-titulo">-->
+<!--            <p>Realizar Pedido</p>-->
+<!--        </div>-->
+<!--        <ul id="navegacion-volver">-->
+<!--            <li><a th:href="@{/mostrarIndex}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <div id="">-->
+<!--        <div id="contenido-plantas">-->
+<!--        	<h2>REALIZAR PEDIDO</h2>-->
+        
+<!--            <table class="table table-striped">-->
+<!--                <thead>-->
+<!--                    <tr>-->
+<!--                        <th>Planta</th>-->
+<!--                        <th>Ejemplares</th>-->
+<!--                        <th>Stock</th>-->
+<!--                        <th>Añadir</th>-->
+<!--                        <th>Borrar</th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--				<tbody>-->
+<!--        			<tr th:each="ejemplar : ${ejemplares}">-->
+<!--            			<td th:text="${ejemplar.planta.nombreComun}"></td>-->
+<!--            			<td th:text="${ejemplar.nombre}"></td>-->
+<!--            			<td th:text="${ejemplar.disponible}"></td>-->
+<!--        				<td><button>+</button></td>-->
+<!--        				<td><button>-</button></td>-->
+<!--        			</tr>-->
+<!--    			</tbody>-->
+<!-- 				<tbody> -->
+<!--     				<tr th:each="planta : ${plantas}"> -->
+<!--         				<td th:text="${planta.nombreComun}"></td> -->
+<!--         				<td> -->
+<!--             				<ul> -->
+<!--                 				<li th:each="ejemplar : ${planta.ejemplares}" th:text="${ejemplar.nombre}"></li> -->
+<!--             				</ul> -->
+<!--         				</td> -->
+<!--         				<td> -->
+<!--         					<ul> -->
+<!--         						<li th:each="ejemplar : ${planta.ejemplares}" th:text="${ejemplar.disponible}"></li> -->
+<!--         					</ul> -->
+<!--         				</td>-->
+<!--						<td><input type="number" placeholder="Cantidad"></td>-->
+<!--         				<td><button>+</button></td>-->
+<!--         				<td><button>-</button></td>-->
+<!--     				</tr> -->
+<!--     				<tr th:if="${#lists.isEmpty(plantas)}"> -->
+<!--         				<td colspan="4" class="text-center">No hay plantas registradas</td> -->
+<!--     				</tr> -->
+<!-- 				</tbody> -->
+<!--            </table>-->
+<!--            <div id="form-botones">-->
+<!--				<button type="submit">Pedir</button>-->
+<!--				<button type="reset" id="reiniciar">Borrar</button>-->
+<!--			</div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <script src="/webjars/jquery/jquery.min.js"></script>-->
+<!--    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="es" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>Realizar Pedido</title>-->
+<!--     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+<!--    <link rel="stylesheet" href="css/realizar-pedido.css" th:href="@{/css/realizar-pedido.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div id="navegacion">-->
+<!--        <div id="navegacion-logo">-->
+<!--            <img th:src="@{/imagenes/Logo.png}" alt="Logo" width="90">-->
+<!--        </div>-->
+<!--        <div id="navegacion-titulo">-->
+<!--            <p>Realizar Pedido</p>-->
+<!--        </div>-->
+<!--        <ul id="navegacion-volver">-->
+<!--            <li><a th:href="@{/mostrarIndex}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <div id="">-->
+<!--        <div id="contenido-plantas">-->
+<!--        	<h2>REALIZAR PEDIDO</h2>-->
+        
+<!--            <table class="table table-striped">-->
+<!--                <thead>-->
+<!--                    <tr>-->
+<!--                        <th>Planta</th>-->
+<!--                        <th>Ejemplares</th>-->
+<!--                        <th>Añadir</th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!-- 				<tbody> -->
+<!--     				<tr th:each="planta : ${plantas}"> -->
+<!--         				<td th:text="${planta.nombreComun}"></td> -->
+<!--         				<td> -->
+<!--             				<ul> -->
+<!--                 				<li th:each="ejemplar : ${planta.ejemplares}" th:text="${ejemplar.nombre}"></li> -->
+<!--             				</ul> -->
+<!--         				</td>-->
+<!--						<td><input type="number" placeholder="Cantidad"></td>-->
+<!--     				</tr> -->
+<!--     				<tr th:if="${#lists.isEmpty(plantas)}"> -->
+<!--         				<td colspan="4" class="text-center">No hay plantas registradas</td> -->
+<!--     				</tr> -->
+<!-- 				</tbody> -->
+<!--            </table>-->
+<!--            <div id="form-botones">-->
+<!--				<button type="submit">Pedir</button>-->
+<!--				<button type="reset" id="reiniciar">Borrar</button>-->
+<!--			</div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <script src="/webjars/jquery/jquery.min.js"></script>-->
+<!--    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Realizar Pedido</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="css/realizar-pedido.css" th:href="@{/css/realizar-pedido.css}">
+</head>
+<body>
+    <div id="navegacion">
+        <div id="navegacion-logo">
+            <img th:src="@{/imagenes/Logo.png}" alt="Logo" width="90">
+        </div>
+        <div id="navegacion-titulo">
+            <p>Realizar Pedido</p>
+        </div>
+        <ul id="navegacion-volver">
+            <li><a th:href="@{/mostrarIndex}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>
+        </ul>
+    </div>
+
+    <div id="contenido-plantas">
+        <h2>REALIZAR PEDIDO</h2>
+		
+		<form th:action="@{/agregarAlCarrito}" method="post">
+		    <table class="table table-striped">
+		        <thead>
+		            <tr>
+		                <th>Planta</th>
+		                <th>Ejemplares Disponibles</th>
+		                <th>Cantidad</th>
+		            </tr>
+		        </thead>
+		
+		        <tbody>
+		            <tr th:each="planta : ${plantas}">
+		                <td th:text="${planta.codigo}"></td>
+		                
+		                <td>
+		                    <ul>
+		                        <li th:each="ejemplar : ${planta.ejemplares}">
+		                            <span th:text="${ejemplar.nombre}"></span>
+		                        </li>
+		                    </ul>
+		                </td>
+		
+		                <!-- Campo oculto para enviar el ID de la planta -->
+		                <input type="hidden" name="plantaId" th:value="${planta.id}">
+		
+		                <!-- Campo de cantidad -->
+		                <td>
+		                    <input type="number" name="cantidad" min="1" th:max="${#lists.size(planta.ejemplares)}" placeholder="Cantidad">
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		
+		    <div id="form-botones">
+		        <button type="submit">Añadir al Carrito</button>
+		        <button type="reset" id="reiniciar">Borrar</button>
+		    </div>
+		</form>
+    </div>
+
+	<!-- Prueba -->
+	<form th:action="@{/confirmarPedido}" method="post">
+	    <button type="submit">Confirmar Pedido</button>
+	</form>
+	
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

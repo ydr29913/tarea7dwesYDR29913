@@ -1,38 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menu Persona</title>
+    <title>Registrar Cliente</title>
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"> -->
-
-    <link rel="stylesheet" href="../css/menu-persona.css" >
-</head>
-<body>
+    
+    <link rel="stylesheet" href="css/registrar-cliente.css" th:href="@{/css/registrar-cliente.css}">
+  </head>
+  <body>
     <div id="navegacion">
         <div id="navegacion-logo">
-            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
+            <img src="imagenes/Logo.png" alt="Logo" width="80">
         </div>
         
         <div id="navegacion-titulo">
-            <p>Menu Personas</p>
+            <p>Registrarse</p>
         </div>
 
         <ul id="navegacion-volver">
-            <li><a href="/mostrarMenuAdmin"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
+            <li><a href="/mostrarIndex"><img src="../imagenes/volver.png" alt="Login" width="50"></a></li>
         </ul>
     </div>
 
     <div id="">
-		<form id="opciones" th:action="@{/registrarPersona}" method="post">
-			<h2>Registrar Persona</h2>
+		<form id="opciones" th:action="@{/registrarCliente}" method="post">
+			<h2>Registrate como Cliente</h2>
 				
 			<label for="nombre">Nombre:</label> 
 			<input type="text" name="nombre" id="nombre" required>
 				
-			<label for="correo">Correo:</label>
-			<input type="email" name="correo" id="correo" placeholder="ejemplo@gmail.com" required>
+			<label for="fechanac">Fecha Nacimiento:</label> 
+			<input type="date" name="fechanac" id="fechanac" required>
+			
+			<label for="nifnie">NIF/NIE:</label> 
+			<input type="text" name="nifnie" id="nifnie" placeholder="00000000X" required>
+			
+			<label for="direccion">Direccion:</label> 
+			<input type="text" name="direccion" id="direccion" required>
+			
+			<label for="email">Email:</label>
+			<input type="email" name="email" id="email" placeholder="ejemplo@gmail.com" required>
 				
+			<label for="telefono">Telefono:</label> 
+			<input type="text" name="telefono" id="telefono" placeholder="9 numeros" required>
+			
 			<label for="usuario">Usuario:</label>
 			<input type="text" name="usuario" id="usuario" required>
 				
@@ -46,9 +58,18 @@
 		</form>
 
 		<!-- Mostrar mensajes de error o éxito -->
-		<div th:if="${errorNombre != null}" class="alert alert-danger" id="mensajeError">
-            <span th:text="${errorNombre}" >Usuario o contraseña incorrectos.</span>
-        </div>
+		<div th:if="${errorNombre != null}">
+			<p th:text="${errorNombre}" style="color: red;"></p>
+		</div>
+		<div th:if="${errorFecha != null}">
+			<p th:text="${errorFecha}" style="color: red;"></p>
+		</div>
+		<div th:if="${errorNifNie != null}">
+			<p th:text="${errorNifNie}" style="color: red;"></p>
+		</div>
+		<div th:if="${errorDireccion != null}">
+			<p th:text="${errorDireccion}" style="color: red;"></p>
+		</div>
 		<div th:if="${errorEmail != null}">
 			<p th:text="${errorEmail}" style="color: red;"></p>
 		</div>
@@ -61,9 +82,9 @@
 		<div th:if="${mensajeExito != null}">
 			<p th:text="${mensajeExito}" style="color: green;"></p>
 		</div>
-	</div>
-
+    </div>
+	
     <script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>

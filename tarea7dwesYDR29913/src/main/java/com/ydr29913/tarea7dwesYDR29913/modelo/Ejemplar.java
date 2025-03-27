@@ -20,13 +20,16 @@ import jakarta.persistence.Table;
 public class Ejemplar implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column
 	private String nombre;
+	
+	@Column
+	private Boolean disponible = true;
 	
 	@ManyToOne
 	@JoinColumn(name="idPlanta")
@@ -35,6 +38,10 @@ public class Ejemplar implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="idEjemplar")
 	private List<Mensaje> mensajes = new LinkedList<>();
+	
+	@ManyToOne
+    @JoinColumn(name = "pedidoId")
+    private Pedido pedido;
 	
 	
 	//Constructor
@@ -57,6 +64,14 @@ public class Ejemplar implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
 
 	public Planta getPlanta() {
 		return planta;
@@ -65,10 +80,6 @@ public class Ejemplar implements Serializable {
 	public void setPlanta(Planta planta) {
 		this.planta = planta;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	
 	public List<Mensaje> getMensajes() {
 		return mensajes;
@@ -76,5 +87,25 @@ public class Ejemplar implements Serializable {
 
 	public void setMensajes(List<Mensaje> mensajes) {
 		this.mensajes = mensajes;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+	
+	public Boolean getDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(Boolean disponible) {
+		this.disponible = disponible;
+	}
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }

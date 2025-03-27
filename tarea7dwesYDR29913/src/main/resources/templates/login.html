@@ -11,7 +11,7 @@
   <body>
     <div id="navegacion">
         <div id="navegacion-logo">
-            <img src="../imagenes/Logo.png" alt="Logo" width="75">
+            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
         </div>
         <div id="navegacion-titulo">
             <p>Login</p>
@@ -38,8 +38,8 @@
         </form>
         
         <!-- Mostrar error en caso de que haya uno -->
-        <div th:if="${error != null}" class="alert alert-danger">
-            <span th:text="${error}">Usuario o contraseña incorrectos.</span>
+        <div th:if="${error != null}" class="alert alert-danger" id="mensajeError">
+            <span th:text="${error}" style="color: red;">Usuario o contraseña incorrectos.</span>
         </div>
     </div>
     

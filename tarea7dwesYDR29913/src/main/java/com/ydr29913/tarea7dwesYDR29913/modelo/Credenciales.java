@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,6 +29,14 @@ public class Credenciales implements Serializable {
 	
 	@Column
 	private String perfil;
+	
+	@OneToOne
+	@JoinColumn(name = "persona_id", referencedColumnName = "id")
+	private Persona persona;
+	
+	@OneToOne
+	@JoinColumn(name = "cliente_id", referencedColumnName = "id")
+	private Cliente cliente;
 	
 	
 	//Constructor
@@ -64,6 +74,22 @@ public class Credenciales implements Serializable {
 
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public static long getSerialversionuid() {

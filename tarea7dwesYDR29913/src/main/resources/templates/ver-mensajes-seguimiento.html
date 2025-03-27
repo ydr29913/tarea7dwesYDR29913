@@ -11,38 +11,73 @@
 <body>
     <div id="navegacion">
         <div id="navegacion-logo">
-            <img th:src="@{/imagenes/Logo.png}" alt="Logo" width="90">
+            <a href="/mostrarIndex"><img src="../imagenes/Logo.png" alt="Logo" width="75"></a>
         </div>
         <div id="navegacion-titulo">
             <p>Ver Mensajes Seguimiento</p>
         </div>
         <ul id="navegacion-volver">
-            <li><a th:href="@{/mostrarIndex}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>
+            <li><a th:href="@{/mostrarGestionEjemplares}"><img th:src="@{/imagenes/volver.png}" alt="Volver" width="50"></a></li>
         </ul>
     </div>
 
     <div id="">
-        <div id="opciones">
-        	<h2>VER MENSAJES SEGUIMIENTO</h2>
-        	
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Mensaje</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="mensaje : ${mensajes}">
-                        <td th:text="${mensaje.id}"></td>
-                        <td th:text="${mensaje.mensaje}"></td>
-                    </tr>
-                    <tr th:if="${#lists.isEmpty(mensajes)}">
-                        <td colspan="2" class="text-center">No hay Mensajes registradas</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<!--        <form id="filtrar-mensajes" action="/filtrarMensajes" method="post">-->
+<!--            <h2>Filtrar Mensajes</h2>-->
+
+<!--            <label for="filtroEjemplar">Selecciona un Ejemplar para filtrar los Mensajes:</label>-->
+<!--            <select name="filtroEjemplar" id="filtroEjemplar">-->
+<!--                <option value="">Seleccione un ejemplar</option>-->
+<!--                <option th:each="ejemplar : ${ejemplares}" th:value="${ejemplar.id}" th:text="${ejemplar.nombre}"></option>-->
+<!--            </select>-->
+
+<!--            <div id="form-botones">-->
+<!--                <button type="submit">Filtrar Mensajes</button>-->
+<!--            </div>-->
+
+<!--			<div id="resultado">-->
+<!--				<ul id="mensajes-lista">-->
+<!--					<th:block th:each="mensaje : ${mensajes}">-->
+<!--						<li th:text="${mensaje.mensaje}"></li>-->
+<!--					</th:block>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</form>-->
+		<form id="filtrar-mensajes" action="/filtrarMensajes" method="post">
+    		<h2>Filtrar Mensajes</h2>
+
+    		<label for="filtroEjemplar">Selecciona un Ejemplar para filtrar los Mensajes:</label>
+    		<select name="filtroEjemplar" id="filtroEjemplar">
+        		<option value="">Seleccione un ejemplar</option>
+        		<option th:each="ejemplar : ${ejemplares}" th:value="${ejemplar.id}" th:text="${ejemplar.nombre}"></option>
+    		</select>
+
+    		<div id="form-botones">
+        		<button type="submit">Filtrar Mensajes</button>
+    		</div>
+
+    		<div id="resultado">
+        		<table class="table table-striped">
+            		<thead>
+                		<tr>
+                    		<th>Usuario</th>
+                    		<th>Fecha</th>
+                    		<th>Mensaje</th>
+                		</tr>
+            		</thead>
+            		<tbody>
+                		<tr th:each="mensaje : ${mensajes}">
+							<td th:text="${mensaje.persona.getNombre()}"></td>
+							<td th:text="${mensaje.fechaHora}"></td>
+                    		<td th:text="${mensaje.mensaje}"></td>	
+                		</tr>
+                		<tr th:if="${#lists.isEmpty(mensajes)}">
+                    		<td colspan="4" class="text-center">No hay mensajes disponibles</td>
+                		</tr>
+            		</tbody>
+        		</table>
+    		</div>
+		</form>
     </div>
 
     <script src="/webjars/jquery/jquery.min.js"></script>
