@@ -14,34 +14,20 @@
 //@EnableWebSecurity
 //public class SecurityConfig {
 //	
-////	@Bean
-////	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-////		http.authorizeHttpRequests(request ->
-////				request.requestMatchers("/usuarios/**").permitAll().requestMatchers("/pagos/**").authenticated()
-////		).csrf(csrf -> csrf.disable());
-////		return http.build();
-////	}
-////	
-////	public UserDetailsService testUser() {
-////		
-////	}
+//	@Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        http.authorizeHttpRequests(auth -> auth
+//                .requestMatchers("/admin/**").hasRole("ADMIN")
+//                .requestMatchers("/personal/**").hasRole("PERSONAL")
+//                .anyRequest().permitAll()
+//            )
+//            .formLogin(login -> login
+//                .loginPage("/login")
+//                .defaultSuccessUrl("/index")
+//                .permitAll()
+//            )
+//            .logout(logout -> logout.logoutUrl("/logout").permitAll());
 //
-//	
-////	@Bean
-////    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-////        http
-////            .authorizeHttpRequests(auth -> auth
-////                .requestMatchers("/admin/**").hasRole("ADMIN")
-////                .requestMatchers("/personal/**").hasRole("USER")
-////                .anyRequest().permitAll()
-////            )
-////            .formLogin(login -> login
-////                .loginPage("/index")
-////                .defaultSuccessUrl("/personal")
-////                .permitAll()
-////            )
-////            .logout(logout -> logout.logoutUrl("/logout").permitAll());
-////
-////        return http.build();
-////    }
+//        return http.build();
+//    }
 //}
